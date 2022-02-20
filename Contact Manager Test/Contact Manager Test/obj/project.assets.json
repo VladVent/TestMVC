@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\Contact Manager Test.csproj",
-      "projectName": "Contact Manager Test",
-      "projectPath": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\Contact Manager Test.csproj",
+      "projectUniqueName": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\ContactManagerTest.csproj",
+      "projectName": "ContactManagerTest",
+      "projectPath": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\ContactManagerTest.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
       "outputPath": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\obj\\",
       "projectStyle": "PackageReference",

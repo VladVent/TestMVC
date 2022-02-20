@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SynTQGCwBVfbpBIqFY/si7h2IUQptsd3s/k1ModmwDPpaD5ekeU6jDxUVQucZJ2TTtxN3zUgBxAYwSE/ePgoxQ==",
+  "dgSpecHash": "8i22Q4kb6fEYE3s0/vAUefTM3fQQipXmZg6Wbq/CAx6GTpoj4lgqU0T3x6dd5lnTZRPfZ7qH7gFSlhDDi2FgVg==",
   "success": true,
-  "projectFilePath": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\Contact Manager Test.csproj",
+  "projectFilePath": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\ContactManagerTest.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
