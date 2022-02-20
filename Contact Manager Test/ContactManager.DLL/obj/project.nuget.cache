@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kB1IVAfTIloFJBrMr9gjw6nU07gvNRRLHOdIaFenFSn9wIoB5908UIu/lY8IXA0TjSIG2YoHvrx2m+IXJExBXA==",
+  "dgSpecHash": "GWZUolUwkT54Lv2FxqIYYIJXS7VdwEu+7wZAPr5bI2rUahjMwtdax5Tt6TqmAGfDp4l+mnZGxke3Y7F3N89YRA==",
   "success": true,
-  "projectFilePath": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\ContactManager.DLL.csproj",
+  "projectFilePath": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\ContactManager.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactManager.DLL.Context
+namespace ContactManager.DAL.Context
 {
     public class ApplicationContext : DbContext
     {

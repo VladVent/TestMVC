@@ -1792,9 +1792,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\ContactManager.DLL.csproj",
-      "projectName": "ContactManager.DLL",
-      "projectPath": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\ContactManager.DLL.csproj",
+      "projectUniqueName": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\ContactManager.DAL.csproj",
+      "projectName": "ContactManager.DAL",
+      "projectPath": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\ContactManager.DAL.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
       "outputPath": "D:\\TestMVC\\Contact Manager Test\\ContactManager.DLL\\obj\\",
       "projectStyle": "PackageReference",

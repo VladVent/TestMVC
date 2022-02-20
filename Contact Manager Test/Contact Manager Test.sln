@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactManagerTest", "Contact Manager Test\ContactManagerTest.csproj", "{1449F6CF-5CA3-4245-BE10-034C964DC112}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.DLL", "ContactManager.DLL\ContactManager.DLL.csproj", "{8FA94BE2-3C0B-46B7-AC2D-9E94BDD13654}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManager.DAL", "ContactManager.DLL\ContactManager.DAL.csproj", "{8FA94BE2-3C0B-46B7-AC2D-9E94BDD13654}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
