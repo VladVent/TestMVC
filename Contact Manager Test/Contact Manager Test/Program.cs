@@ -1,7 +1,16 @@
+using ContactManager.DAL.Context;
+using ContactManager.DLL.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationContext>(options =>
+{
+    options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=PersonDb;Trusted_Connection=True;");
+});
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 

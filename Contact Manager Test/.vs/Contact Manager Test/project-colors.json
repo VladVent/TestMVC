@@ -3,9 +3,19 @@
   "ProjectMap": {
     "1449f6cf-5ca3-4245-be10-034c964dc112": {
       "ProjectGuid": "1449f6cf-5ca3-4245-be10-034c964dc112",
-      "DisplayName": "Contact Manager Test",
+      "DisplayName": "ContactManagerTest",
       "ColorIndex": 0
+    },
+    "8fa94be2-3c0b-46b7-ac2d-9e94bdd13654": {
+      "ProjectGuid": "8fa94be2-3c0b-46b7-ac2d-9e94bdd13654",
+      "DisplayName": "ContactManager.DAL",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

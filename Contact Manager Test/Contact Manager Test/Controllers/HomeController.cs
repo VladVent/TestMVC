@@ -1,4 +1,6 @@
 ﻿using Contact_Manager_Test.Models;
+using ContactManager.DAL.Entities;
+using ContactManager.DLL.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,20 +9,32 @@ namespace Contact_Manager_Test.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IGenericRepository<Person> _personRepo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IGenericRepository<Person> personRepo)
         {
             _logger = logger;
+            _personRepo = personRepo;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var persons = _personRepo.Get();
+            return View(persons);
         }
 
-        public IActionResult Privacy()
+        [HttpPut]
+        public IActionResult UpdatePerson(Person person)
         {
-            return View();
+            _personRepo.Update(person);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult DeletePerson(int Id)
+        {
+            _personRepo.Remove(Id);
+            return Ok();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

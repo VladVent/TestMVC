@@ -1,0 +1,46 @@
+﻿@model List<Person>
+@using ContactManager.DAL.Entities
+
+
+<table id="person-table" class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>Name</th>
+            <th>Data of birth</th>
+            <th>Married</th>
+            <th>Phone</th>
+            <th>Salary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <form id="update-person-@person.Id" class="update-person" asp-action="UpdatePerson" method="post">
+                <input type="hidden" asp-for="@(person.Id)">
+                <tr class="ebaniy-tr">
+                    <th>
+                        <input asp-for="@(person.Name)" />
+                    </th>
+                    <th>
+                        <input asp-for="@(person.DateOfBirth)" />
+                    </th>
+                    <td>
+                        <input asp-for="@(person.IsMarried)" />
+                    </td>
+                    <td>
+                        <input asp-for="@(person.Phone)" />
+                    </td>
+                    <td>
+                        <input asp-for="@(person.Salary)" />
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-primary">Update</button>
+                        <a class="delete-person btn btn-danger" asp-action="DeletePerson" asp-route-id="@(person.Id)">Delete</a>
+                    </td>
+                </tr>
+            </form>
+        }
+
+    </tbody>
+</table>

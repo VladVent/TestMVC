@@ -594,19 +594,6 @@
             "rid": "win"
           }
         }
-      },
-      "ContactManagerTest/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/ContactManagerTest.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ContactManagerTest.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -1771,16 +1758,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "ContactManagerTest/1.0.0": {
-      "type": "project",
-      "path": "../Contact Manager Test/ContactManagerTest.csproj",
-      "msbuildProject": "../Contact Manager Test/ContactManagerTest.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ContactManagerTest >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.2"
     ]
@@ -1815,11 +1796,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\ContactManagerTest.csproj": {
-              "projectPath": "D:\\TestMVC\\Contact Manager Test\\Contact Manager Test\\ContactManagerTest.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

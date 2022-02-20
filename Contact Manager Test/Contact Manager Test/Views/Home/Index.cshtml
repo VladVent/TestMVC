@@ -1,8 +1,48 @@
-﻿@{
+﻿@model List<Person>
+@using ContactManager.DAL.Entities
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+           <partial name="_PersonsList.cshtml" model="@Model" />
+        </div>
+    </div>
 </div>
+
+<script>
+    $(".update-person").submit(function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'PUT',
+            data: $(this).serialize(),
+            success: function (data) {
+                alert('Updated');
+            },
+            error: function() {
+                console.log('smth wrong');
+            }
+        });
+    });
+    $(".delete-person").click(function(e) {
+        e.preventDefault();
+        var tr = $(this).closest('.ebaniy-tr');
+        console.log(tr);
+        
+        $.ajax({
+            url: $(this).attr('href'),
+            type: 'DELETE',
+            success: function (data) {
+                tr.remove();
+            },
+            error: function() {
+                console.log('smth wrong');
+            }
+        });
+    })
+</script>

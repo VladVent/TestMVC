@@ -72,9 +72,11 @@ namespace ContactManager.DLL.Repositories
             _context.SaveChanges();
         }
 
-        public void Remove(int item)
+        public void Remove(int id)
         {
-            throw new NotImplementedException();
+            var item = _dbSet.Find(id);
+            _dbSet.Remove(item);
+            _context.SaveChanges();
         }
 
     }
