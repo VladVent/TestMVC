@@ -1,4 +1,5 @@
 ﻿using ContactManager.DAL.Context;
+using ContactManager.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -76,6 +77,12 @@ namespace ContactManager.DLL.Repositories
         {
             var item = _dbSet.Find(id);
             _dbSet.Remove(item);
+            _context.SaveChanges();
+        }
+
+        public void CreateRange(List<Person> persons)
+        {
+            _dbSet.Add((TEntity)(IEnumerable<TEntity>)persons);
             _context.SaveChanges();
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactManager.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -19,5 +20,6 @@ namespace ContactManager.DLL.Repositories
         void Remove(int item);
         void RemoveRange(IEnumerable<T> item);
         void Update(T item);
+        void CreateRange(List<Person> persons);
     }
 }

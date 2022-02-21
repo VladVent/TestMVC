@@ -2,8 +2,8 @@
 @using ContactManager.DAL.Entities
 
 
-<table id="person-table" class="table table-hover">
-    <thead class="thead-light">
+<table id="table" class="table table-hover">
+    <thead>
         <tr>
             <th>Name</th>
             <th>Data of birth</th>
@@ -18,7 +18,7 @@
         {
             <form id="update-person-@person.Id" class="update-person" asp-action="UpdatePerson" method="post">
                 <input type="hidden" asp-for="@(person.Id)">
-                <tr class="ebaniy-tr">
+                <tr class="just-tr">
                     <th>
                         <input asp-for="@(person.Name)" />
                     </th>
