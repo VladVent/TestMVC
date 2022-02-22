@@ -13,6 +13,7 @@ namespace ContactManager.DLL.Repositories
         T Create(T item);
         T FindById(int id);
         IEnumerable<T> Get();
+        IEnumerable<T> GetOrdered(Expression<Func<T, object>> predicate, bool desc = false);
         IEnumerable<T> Get(Func<T, bool> predicate);
         IEnumerable<T> GetWithInclude(Func<T, bool> predicate, params Expression<Func<T, object>>[] includeProperties);
         IEnumerable<T> GetWithInclude(params Expression<Func<T, object>>[] includeProperties);
@@ -20,6 +21,6 @@ namespace ContactManager.DLL.Repositories
         void Remove(int item);
         void RemoveRange(IEnumerable<T> item);
         void Update(T item);
-        void CreateRange(List<Person> persons);
+        void CreateRange(IEnumerable<T> persons);
     }
 }

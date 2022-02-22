@@ -1,8 +1,14 @@
-﻿using Contact_Manager_Test.Models;
+﻿using Contact_Manager_Test.Extensions;
+using Contact_Manager_Test.Models;
+using ContactManager.DAL.Context;
 using ContactManager.DAL.Entities;
 using ContactManager.DLL.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Linq;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace Contact_Manager_Test.Controllers
 {
@@ -17,9 +23,30 @@ namespace Contact_Manager_Test.Controllers
             _personRepo = personRepo;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string orderBy)
         {
-            var persons = _personRepo.Get();
+            var persons = new List<Person>();
+            switch (orderBy)
+            {
+                case "sortName":
+                    persons = _personRepo.GetOrdered(p => p.Name).ToList();
+                    break;
+                case "sortDate":
+                    persons = _personRepo.GetOrdered(p => p.DateOfBirth).ToList();
+                    break;
+                case "sortPhone":
+                    persons = _personRepo.GetOrdered(p => p.Phone).ToList();
+                    break;
+                case "sortMarried":
+                    persons = _personRepo.GetOrdered(p => p.IsMarried).ToList();
+                    break;
+                case "sortSalary":
+                    persons = _personRepo.GetOrdered(p => p.Salary).ToList();
+                    break;
+                default:
+                    persons = _personRepo.GetOrdered(p => p.Name).ToList();
+                    break;
+            }
             return View(persons);
         }
 
@@ -36,13 +63,34 @@ namespace Contact_Manager_Test.Controllers
             _personRepo.Remove(Id);
             return Ok();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult UploadCSV(UploadFileViewModel model)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+            var persons = new List<Person>();
+            var streamReader = new StreamReader(model.File.OpenReadStream());
 
-      
+            var dataTable = streamReader.ConvertStreamToDataTable();
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                var row = dataTable.Rows[i];
+
+                var person = new Person();
+                for (int j = 0; j < dataTable.Columns.Count; j++)
+                {
+                    PropertyInfo propertyInfo = person.GetType()
+                        .GetProperty(dataTable.Columns[j].ToString(), BindingFlags.Public | BindingFlags.Instance);
+
+                    if (propertyInfo != null && propertyInfo.CanWrite)
+                    {
+                        propertyInfo.SetValue(person, Convert.ChangeType(row[j], propertyInfo.PropertyType), null);
+                    }
+                }
+
+                persons.Add(person);
+            }
+
+            _personRepo.CreateRange(persons);
+            return RedirectToAction("Index");
+        }
     }
 }

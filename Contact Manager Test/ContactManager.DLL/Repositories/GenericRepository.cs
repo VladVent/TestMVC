@@ -23,6 +23,12 @@ namespace ContactManager.DLL.Repositories
             return _dbSet.AsNoTracking().ToList();
         }
 
+        public IEnumerable<TEntity> GetOrdered(Expression<Func<TEntity, object>> predicate, bool desc = false)
+        {
+            var ordered = desc ? _dbSet.OrderByDescending(predicate) : _dbSet.OrderBy(predicate);
+            return ordered.AsNoTracking().ToList();
+        }
+
         public IEnumerable<TEntity> Get(Func<TEntity, bool> predicate)
         {
             return _dbSet.AsNoTracking().Where(predicate).ToList();
@@ -80,11 +86,10 @@ namespace ContactManager.DLL.Repositories
             _context.SaveChanges();
         }
 
-        public void CreateRange(List<Person> persons)
+        public void CreateRange(IEnumerable<TEntity> persons)
         {
-            _dbSet.Add((TEntity)(IEnumerable<TEntity>)persons);
+            _dbSet.AddRange(persons);
             _context.SaveChanges();
         }
-
     }
 }
